@@ -1,0 +1,157 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+@define-color waybar_bg alpha(@background, 0.6);
+@define-color waybar_bg_solid @background;
+
+/* 
+*    plana      rgb(228, 139, 229)
+*    windows11  rgb(92, 183, 239)
+*/ 
+
+@define-color accent_color @color5;
+
+@define-color ws_button rgba(0, 0, 0, 0);
+@define-color ws_button_special @accent_color;
+@define-color ws_button_persistent @foreground;
+@define-color ws_button_hover @color7;
+@define-color ws_button_active @accent_color;
+@define-color ws_button_urgent #FF9951;
+
+* {
+    border: none;
+    font-family: "Noto Sans CJK KR", "Noto Sans", "D2Coding";
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    all: unset;
+    background: transparent;
+}
+
+#window {
+    padding: 0 15 0 15;
+    border-radius: 20px;
+    background: @waybar_bg;
+    opacity: 1;
+}
+
+.modules-left {
+    background: transparent;
+    padding: 0;
+}
+.modules-center {
+    background: transparent;
+    padding: 0;
+}
+.modules-right {
+    background: transparent;
+    padding: 0;
+}
+
+#custom-notification {
+    font-family: "Material Symbols Rounded";
+    font-size: 20px;
+    padding: 0 10 0 10;
+    border-radius: 20px;
+    background: @waybar_bg;
+}
+
+#workspaces {
+    padding: 2 5;
+    border-radius: 20px;
+    background: @waybar_bg;
+}
+
+#workspaces label {
+  font-size: 20px;
+}
+
+#workspaces button {
+    background: @ws_button;
+    transition: none;
+    margin: 0 5;
+}
+
+#workspaces button.persistent {
+    background: transparent;
+    color: @ws_button_persistent;
+    opacity: 0.4;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.special {
+    background: transparent;
+    color: @ws_button_special;
+    opacity: 0.4;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    background: transparent;
+    color: @ws_button_active;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.urgent {
+    background: transparent;
+    color: @ws_button_urgent;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: @ws_button_hover;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#system-control, #system-monitor, #tray {
+    padding: 0 10 0 10;
+    border-radius: 20px;
+    background: @waybar_bg;
+}
+
+#custom-speaker-icon {
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    margin: 0 3 0 0;
+}
+
+#custom-cpu-icon {
+    font-family: "Material Symbols Rounded";
+    font-size: 20px;
+    margin: 0 2 0 0;
+}
+
+#custom-memory-icon {
+    font-family: "Material Symbols Rounded";
+    font-size: 18px;
+    margin: 0 3 0 0;
+}
+
+#clock, #clock.date {
+    padding: 0 10 0 10;
+    border-radius: 20px;
+    background: @waybar_bg;
+}
+
+#cpu {
+    margin: 0 10 0 0;
+}
+
+#memory {
+    margin: 0 2 0 0;
+}
+
+#wireplumber {
+    margin: 0 3 0 0;
+}
+
+
+
+

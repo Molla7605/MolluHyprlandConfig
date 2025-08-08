@@ -1,0 +1,48 @@
+@import "/home/Mollu/.cache/wal/colors-waybar.css";
+
+* {
+    font-family: "Noto Sans CJK KR", "Noto Sans", "D2Coding";
+    font-weight: Normal;
+    font-size: 15px;
+}
+
+#window {
+    background-color: alpha(@background, 0.6);
+    border: 2px solid @color6;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+#input {
+    background-color: alpha(@background, 0.4);
+    color: @forground;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 2px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#inner-box {
+    background-color: transparent;
+    padding: 5px;
+}
+
+#outer-box {
+    padding: 0;
+}
+
+#entry {
+    background-color: transparent;
+    color: @color7;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+#entry:selected {
+    background-color: @color6;
+    color: @background; 
+}

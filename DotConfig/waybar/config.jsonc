@@ -1,0 +1,103 @@
+{
+    "layer": "top",
+    "position": "top",
+    
+    "margin-top": 10,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    
+    "spacing": 10,
+    
+    "reload_style_on_change": true,
+    
+    "modules-left": ["custom/notification", "hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "group/system-control", "group/system-monitor", "clock#date", "clock"],
+    
+    "custom/notification": {
+        "tooltip": false,
+        "format": "\ue7f4",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+    
+    "hyprland/workspaces": {
+    	"on-click": "activate",
+        "disable-scroll": true,
+        "show-special": true,
+        "format": "\u2b24",
+        "persistent-workspaces": {
+            "*": 5
+        },
+    },
+    
+    "hyprland/window": {
+        "rewrite": {
+            "": "Empty workspace",
+        },
+        "max-length": 50,
+        "min-length": 10,
+    },
+    
+    "group/system-control": {
+    	"orientation": "inherit",
+    	"modules": ["custom/speaker-icon", "wireplumber"],
+    },
+    
+    "custom/speaker-icon": {
+        "format": "\ue050",
+        "tooltip": false,
+    },
+    
+    "wireplumber": {
+        "format": "{volume}%",
+        "format-muted": "Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    	"on-click-right": "pavucontrol",
+        "max-volume": 100,
+        "scroll-step": 1
+    },
+    
+     "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+    },
+    
+    "group/system-monitor": {
+    	"orientation": "inherit",
+    	"modules": ["custom/cpu-icon", "cpu", "custom/memory-icon", "memory"],
+    },
+    
+    "custom/cpu-icon": {
+        "format": "\ue322",
+        "tooltip": false,
+    },
+    
+    "custom/memory-icon": {
+        "format": "\uf7a3",
+        "tooltip": false,
+    },
+    
+    "cpu": {
+        "interval": 1,
+        "format": "{usage}%",
+        "tooltip": true,
+    },
+    
+    "memory": {
+        "interval": 1,
+        "format": "{percentage}%",
+        "tooltip": true,
+    },
+    
+    "clock#date": {
+        "format": "{:%Y.%m.%d}",
+        "tooltip": true,
+    },
+    
+    "clock": {
+    	"interval": 1,
+        "format": "{:%r}",
+    }
+}
