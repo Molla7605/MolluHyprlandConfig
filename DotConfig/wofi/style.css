@@ -1,9 +1,9 @@
 @import "/home/Mollu/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Noto Sans CJK KR", "Noto Sans", "D2Coding";
+    font-family: "Pretendard", "Noto Sans";
     font-weight: Normal;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 #window {
@@ -17,7 +17,7 @@
     background-color: alpha(@background, 0.4);
     color: @forground;
     border: none;
-    border-radius: 12px;
+    border-radius: 12px 12px 0px 0px;
     padding: 10px;
     margin: 2px;
     font-size: 16px;
@@ -36,8 +36,8 @@
 #entry {
     background-color: transparent;
     color: @color7;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 5px;
+    border-radius: 10px;
     font-size: 15px;
     margin-bottom: 5px;
 }
@@ -45,4 +45,14 @@
 #entry:selected {
     background-color: @color6;
     color: @background; 
+}
+
+#scroll {
+    background-color: transparent;
+    border: none;
+}
+
+#img {
+    background-color: transparent;
+    padding: 5px;
 }

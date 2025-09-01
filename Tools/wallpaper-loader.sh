@@ -17,30 +17,31 @@ if [[ -f "$CACHE_FILE" || -s "$CACHE_FILE" ]]; then
         wallpaper=$(echo "$i" | base64 --decode | jq -r '.wallpaper')
         
         if [[ -f "$wallpaper" && -n "$(echo "$monitors" | grep "$monitor")" ]]; then
-            hyprctl hyprpaper preload "$wallpaper" || echo notify-send 'hyprctl'
+            hyprctl hyprpaper preload "$wallpaper" || echo notify-send -a 'hyprctl'
             if [ $? -ne 0 ]; then
-                notify-send -u critical 'wallpaper-loader.sh' "Fail to set wallpaper \"$wallpaper\" at $monitor. (hyprpaper fail)"
+                notify-send -a 'wallpaper-loader.sh' '바탕화면 로더' "Fail to set wallpaper \"$wallpaper\" at $monitor. (hyprpaper fail)"
+                continue
             fi
             
-            hyprctl hyprpaper wallpaper "$monitor,$wallpaper" || echo notify-send 'hyprctl'
+            hyprctl hyprpaper wallpaper "$monitor,$wallpaper" || echo notify-send -a 'hyprctl'
             if [ $? -ne 0 ]; then
-                notify-send -u critical 'wallpaper-loader.sh' "Fail to set wallpaper \"$wallpaper\" at $monitor. (hyprpaper fail)"
+                notify-send -a 'wallpaper-loader.sh' '바탕화면 로더' "Fail to set wallpaper \"$wallpaper\" at $monitor. (hyprpaper fail)"
             fi
         else
-            notify-send 'wallpaper-loader.sh' "Fail to set wallpaper \"$wallpaper\" at $monitor. (invalid file or monitor)"
+            notify-send -a 'wallpaper-loader.sh' '바탕화면 로더' "Fail to set wallpaper \"$wallpaper\" at $monitor. (invalid file or monitor)"
         fi
     done
 fi
 
-(wal -n -q -i "$wallpaper" -b '#282a36' || echo notify-send 'pywal') &
+(wal -n -q -i "$wallpaper" -b '#282a36' || echo notify-send -a 'pywal') &
 wait
 
 if [ $? -ne 0 ]; then
-    notify-send 'wallpaper-loader.sh' "Fail to set color \"$wallpaper\". (pywal fail)"
+    notify-send -a 'wallpaper-loader.sh' '바탕화면 로더' "Fail to set color \"$wallpaper\". (pywal fail)"
     exit 1
 fi
 
-swaync-client -rs &
+swaync-client -rs
 wait
 
 exit 0

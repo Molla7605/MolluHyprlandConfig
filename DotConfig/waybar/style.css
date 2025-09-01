@@ -18,21 +18,38 @@
 @define-color ws_button_urgent #FF9951;
 
 * {
+    all: unset;
     border: none;
-    font-family: "Noto Sans CJK KR", "Noto Sans", "D2Coding";
+    font-family: "Pretendard", "Noto Sans";
     font-weight: bold;
     font-size: 14px;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 window#waybar {
-    all: unset;
     background: transparent;
 }
 
+tooltip {
+    background-color: transparent;
+}
+
+tooltip > box {
+    margin-bottom: 5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background-color: alpha(@waybar_bg_solid, 0.8);
+    box-shadow: 0px 2px 4px 1px alpha(@waybar_bg_solid, 0.4);
+}
+
+tooltip label {
+    font-weight: normal;
+    background-color: transparent;
+}
+
 #window {
-    padding: 0 15 0 15;
+    padding: 0px 15px 1px 15px;
     border-radius: 20px;
     background: @waybar_bg;
     opacity: 1;
@@ -40,78 +57,79 @@ window#waybar {
 
 .modules-left {
     background: transparent;
-    padding: 0;
+    padding: 0px;
 }
 .modules-center {
     background: transparent;
-    padding: 0;
+    padding: 0px;
 }
 .modules-right {
     background: transparent;
-    padding: 0;
+    padding: 0px;
 }
 
 #custom-notification {
     font-family: "Material Symbols Rounded";
     font-size: 20px;
-    padding: 0 10 0 10;
+    padding: 0px 10px 0px 10px;
     border-radius: 20px;
     background: @waybar_bg;
 }
 
 #workspaces {
-    padding: 2 5;
+    padding: 5px 3px;
     border-radius: 20px;
     background: @waybar_bg;
 }
 
 #workspaces label {
-  font-size: 20px;
+    font-size: 9px;
+    background: transparent;
+    min-width: 18px;
+    min-height: 18px;
+    transition: all 0.12s ease-out;
 }
 
 #workspaces button {
     background: @ws_button;
-    transition: none;
-    margin: 0 5;
+    border-radius: 9px;
+    margin: 0px 3px;
+    transition: all 0.12s ease-out;
 }
 
 #workspaces button.persistent {
-    background: transparent;
-    color: @ws_button_persistent;
+    background: @ws_button_persistent;
+    color: transparent;
     opacity: 0.4;
-    transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.special {
-    background: transparent;
-    color: @ws_button_special;
+    background: @ws_button_special;
     opacity: 0.4;
-    transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
-    background: transparent;
-    color: @ws_button_active;
+    background: @ws_button_active;
+    color: @background;
     opacity: 1;
-    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active label {
+    min-width: 36px;
 }
 
 #workspaces button.urgent {
-    background: transparent;
-    color: @ws_button_urgent;
+    background: @ws_button_urgent;
     opacity: 1;
-    transition: all 0.2s ease-in-out;
 }
 
 #workspaces button:hover {
-    background: transparent;
-    color: @ws_button_hover;
+    background: @ws_button_hover;
     opacity: 1;
-    transition: all 0.2s ease-in-out;
 }
 
-#system-control, #system-monitor, #tray {
-    padding: 0 10 0 10;
+#system-control, #system-monitor, #tray, #clock, #clock.date {
+    padding: 0px 10px 0px 10px;
     border-radius: 20px;
     background: @waybar_bg;
 }
@@ -119,37 +137,31 @@ window#waybar {
 #custom-speaker-icon {
     font-family: "Material Symbols Rounded";
     font-size: 22px;
-    margin: 0 3 0 0;
+    margin: 0px 3px 0px 0px;
 }
 
 #custom-cpu-icon {
     font-family: "Material Symbols Rounded";
     font-size: 20px;
-    margin: 0 2 0 0;
+    margin: 0px 2px 0px 0px;
 }
 
 #custom-memory-icon {
     font-family: "Material Symbols Rounded";
     font-size: 18px;
-    margin: 0 3 0 0;
-}
-
-#clock, #clock.date {
-    padding: 0 10 0 10;
-    border-radius: 20px;
-    background: @waybar_bg;
+    margin: 0px 3px 0px 0px;
 }
 
 #cpu {
-    margin: 0 10 0 0;
+    margin: 0px 10px 0px 0px;
 }
 
 #memory {
-    margin: 0 2 0 0;
+    margin: 0px 2px 0px 0px;
 }
 
 #wireplumber {
-    margin: 0 3 0 0;
+    margin: 0px 3px 0px 0px;
 }
 
 

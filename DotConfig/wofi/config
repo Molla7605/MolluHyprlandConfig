@@ -1,0 +1,6 @@
+allow_images=true
+image_size=28
+insensitive=true
+no_actions=true
+prompt=검색
+hide_scroll=true

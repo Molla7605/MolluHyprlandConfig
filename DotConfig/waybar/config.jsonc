@@ -16,7 +16,8 @@
     "modules-right": ["tray", "group/system-control", "group/system-monitor", "clock#date", "clock"],
     
     "custom/notification": {
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "알림 센터",
         "format": "\ue7f4",
         "on-click": "swaync-client -t -sw",
         "escape": true
@@ -26,7 +27,7 @@
     	"on-click": "activate",
         "disable-scroll": true,
         "show-special": true,
-        "format": "\u2b24",
+        "format": "",
         "persistent-workspaces": {
             "*": 5
         },
@@ -38,6 +39,7 @@
         },
         "max-length": 50,
         "min-length": 10,
+        "tooltip": false
     },
     
     "group/system-control": {
@@ -59,7 +61,7 @@
         "scroll-step": 1
     },
     
-     "tray": {
+    "tray": {
         "icon-size": 20,
         "spacing": 10,
     },
@@ -93,11 +95,12 @@
     
     "clock#date": {
         "format": "{:%Y.%m.%d}",
-        "tooltip": true,
+        "tooltip": false,
     },
     
     "clock": {
     	"interval": 1,
         "format": "{:%r}",
+        "tooltip": false,
     }
 }
